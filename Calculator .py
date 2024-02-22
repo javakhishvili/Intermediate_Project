@@ -13,7 +13,10 @@ def multiply(x, y):
 
 
 def divide(x, y):
-    return x / y
+    if y != 0:
+        return x / y
+    
+    return "Divide by zero"
 
 
 print("Select operation.")
@@ -30,6 +33,11 @@ while True:
     if choice in ('1', '2', '3', '4'):
         try:
             num1 = float(input("Enter first number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+        
+        try:
             num2 = float(input("Enter second number: "))
         except ValueError:
             print("Invalid input. Please enter a number.")
