@@ -14,30 +14,25 @@ def multiply(x, y):
 
 def divide(x, y):
     if y != 0:
-        return x / y
-    
+       return x / y
+
     return "Divide by zero"
 
 
 print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
+print("1.Add       +")
+print("2.Subtract  -")
+print("3.Multiply  *")
+print("4.Divide    /")
 
 while True:
 
-    choice = input("Enter choice(1/2/3/4): ")
+    choice = input("Enter choice  1(+)   2(-)   3(*)  4(/) ")
 
     
     if choice in ('1', '2', '3', '4'):
         try:
             num1 = float(input("Enter first number: "))
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-            continue
-        
-        try:
             num2 = float(input("Enter second number: "))
         except ValueError:
             print("Invalid input. Please enter a number.")
@@ -54,7 +49,10 @@ while True:
 
         elif choice == '4':
             print(num1, "/", num2, "=", divide(num1, num2))
-        
+            if num2 == 0:
+                    print("Error: Division by zero is not allowed.")
+                    continue
+                
        
         next_calculation = input("Let's do next calculation? (yes/no): ")
         if next_calculation == "no":
