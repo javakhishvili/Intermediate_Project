@@ -26,9 +26,9 @@ def number_guessing_game():
             print(f"Congratulations! You guessed the correct number {secret_number} in {attempts} attempts.")
             break
         elif guess < secret_number:
-            print("Try again. The number is higher.")
+            print("Please enter a higher number.")
         else:
-            print("Try again. The number is lower.")
+            print("Please enter a lower number.")
 
 
 number_guessing_game()
